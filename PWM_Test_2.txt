@@ -1,0 +1,4 @@
+﻿En este test se realiza el mismo procedimiento para modificar el parámetro active que el anterior test, pero en este caso lo que se modifica es el periodo y se mantiene constante el duty cycle del PWM. En este caso el parámetro pulse se define el periodo cómo period = PERIOD/4 y el Pulse cómo period/2. Luego se modifica el periodo: period = period + step. En este caso las condiciones para cambiar de signo step (y que el periodo oscile aumente y disminuya cíclicamente) son las siguientes:
+* si period - step >= PERIOD/2
+* si period - step<= PERIOD/4
+En este caso, al mantener el duty cycle constante, la potencia media se mantiene constante y por lo tanto el LED conectado mantiene su brillo a lo largo de la ejecución del programa

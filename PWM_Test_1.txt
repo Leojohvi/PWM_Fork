@@ -1,0 +1,6 @@
+﻿En este test se modifica el duty cycle del PWM a través del parámetro active que se ingresa en Pulse en la función SetPWM. Se define el periodo fijo a partir de una macro PERIOD y un step también fijo a partir de otra macro STEP. Con estos valores se modifica el parámetro active = active + step, multiplicando el step por -1 en dos casos:
+-si periodo - step <= active
+-si abs(step) >= active.
+
+
+De esta forma se logra ir aumentando y disminuyendo el duty cycle cíclicamente hasta que se alcancen los límites definidos. Para este test se observó que conectando un LED su brillo aumenta y disminuye periódicamente, al igual que lo hace el duty cycle ya que a menor duty cycle menor potencia media tiene la señal que envía el PWM.

@@ -1,0 +1,11 @@
+﻿Para realizar la implementación del PWM, se utilizaron 2 test utilizando la biblioteca TIM de la HAL, la cual fue configurada en el .ioc del proyecto configurando el pin digital PA6, configurando el canal 1 de este pin como un generador de PWM y dejando todo lo demás desactivado. Se utilizaron dos macros TEST_1 y TEST_2 cuyo valor se asignó a la macro TEST_NUMBER para definir cuál de los dos test se utilizó en la implementación. Para los dos test se utilizó la función setPWM para configurar el PWM que se va a obtener a la salida del pin. 
+
+
+Esta función recibe los siguientes parámetros:
+-TIM_HandleTypeDef timer: Define el temporizador que va a utilizar el PWM
+-uint32_t channel: Acá se introduce el canal en el cual se configuró el PWM.
+-uint16_t period: El periodo que va a tener el PWM configurado.
+-uint16_t pulse: Con este valor se controla el duty cycle del PWM, ya que establece cuando se activa la salida.
+
+
+A su vez, se utiliza la estructura TIM_OC_InitTypeDef sConfigOC para configurar el modo (en este caso PW1), la polaridad (en este caso HIGH) y el FastMode que en este caso está deshabilitado.
